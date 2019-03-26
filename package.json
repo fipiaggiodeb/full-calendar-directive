@@ -1,0 +1,12 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "Ejemplo de uso de la direciva de appointments",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --index \"src/index.html\"  --files \"src/**\""
+  },
+  "author": "fipiaggiodeb",
+  "license": "ISC"
+}
