@@ -10,6 +10,10 @@
     <!-- Lib -->
     <script src="/lib/fullcalendar/core/main.min.js"></script>
     <script src="/lib/fullcalendar/daygrid/main.min.js"></script>
+    <script src="/lib/fullcalendar/timegrid/main.min.js"></script>
+    <script src="/lib/fullcalendar/interaction/main.min.js"></script>
+    <script src="/lib/fullcalendar/core/locales-all.min.js"></script>
+    <script src="/lib/fullcalendar/bootstrap/locales/es.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <!-- App -->
     <script src="/src/js/app.js"></script>
@@ -17,7 +21,12 @@
 </head>
 <body>
     <main ng-controller="mainController">
-        <deb-calendar></deb-calendar>
+        <!--
+            * clickcb es el evento al clickear en una cita
+            * events es el listado de citas
+        -->
+        <deb-calendar  clickcb="saludo" events="apiEvents">
+        </deb-calendar>
     </main>
 </body>
 </html>
