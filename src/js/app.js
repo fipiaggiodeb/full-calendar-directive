@@ -9,7 +9,7 @@ const mainController = ($scope, $http) => {
         border-radius: 5px;
     `;
     console.info('%c(╯°□°）╯︵ ┻━┻', styles);
-    $scope.saludo = (ev) => console.log('Hiciste click en: ', ev.el.innerText);
+    $scope.saludo = (ev) => console.log('Hiciste click en: ', ev);
     $scope.exampleEvents = [
         {
             id: '1',

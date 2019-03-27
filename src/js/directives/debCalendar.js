@@ -12,9 +12,9 @@ var debCalendarDirective = function(){
             // Eso rompe angular  ¯\_(ツ)_/¯
             var refactored = angular.copy(events);
             refactored.map(function(event){
-                event.start = event.startAt.substring(event.startAt.indexOf('T'), 0);
-                event.end = event.endAt.substring(event.startAt.indexOf('T'), 0);
-                event.title = event.code;
+                event.start = new Date(event.startAt);
+                event.end = new Date(event.endAt);
+                event.title = 'Turno: ' + event.id;
                 return event;
             });
             return refactored;
@@ -30,12 +30,12 @@ var debCalendarDirective = function(){
 
         // Calendar config
         var configCalendar = {
+            timeZone: "UTC",
             locale: "es",
-            plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
-            timeZone: 'UTC',
-            defaultView: 'dayGridMonth',
+            plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list'],
+            defaultView: 'listWeek',
             header: {
-                left: 'prev,next today',
+                left: 'prev,next today, list',
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
