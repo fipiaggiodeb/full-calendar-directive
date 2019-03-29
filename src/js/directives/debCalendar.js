@@ -8,8 +8,8 @@ var debCalendarDirective = function(){
          * @returns {object}
          */
         var refactorEvents = function(events){
-            // Si no hago un angular copy corre el watcher 9999 veces
-            // Eso rompe angular  ¯\_(ツ)_/¯
+            // Primero hay qeu clonar el array porque si cambia directamente 'events
+            // el watcher se dispara muchas veces y eso crashea la aplicación
             var refactored = angular.copy(events);
             refactored.map(function(event){
                 event.start = new Date(event.startAt);
